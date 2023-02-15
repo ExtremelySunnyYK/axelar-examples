@@ -85,16 +85,11 @@ async function execute(chains, wallet, options) {
 
     if (accounts.length === 0) accounts.push(wallet.address);
 
-    // console.log(await destination.contract.registry())
-    // return;
-
     async function logAccountBalances() {
         for (const account of accounts) {
             console.log(`${account} has ${(await destination.usdc.balanceOf(account)) / 1e6} aUSDC`);
         }
     }
-
-    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     console.log('--- Initially ---');
     await logAccountBalances();
@@ -120,7 +115,6 @@ async function execute(chains, wallet, options) {
     console.log('Call expressExecuteWithToken.', expressTx.transactionHash);
 
     console.log('--- After ---');
-    // await sleep(3000);
     await logAccountBalances();
 }
 
