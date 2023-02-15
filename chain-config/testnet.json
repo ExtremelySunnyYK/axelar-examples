@@ -37,7 +37,15 @@
         "function gateway() view returns (address)",
         "function sendToMany(string destinationChain, string destinationAddress, address[] destinationAddresses, string symbol, uint256 amount) payable"
       ],
-      "address": "0x705B7E5fFEc156e92eE2da7153872714d13C8075"
+      "address": "0xc71FE7dA4f14e18c7be68BbF9C890b91a5a41d7b"
+    },
+    "expressService": {
+      "abi": [
+        "function deployExpressProxy(bytes32, address, address, bytes) returns (address)",
+        "function deployedProxyAddress(bytes32, address) view returns (address)",
+        "function isExpressProxy(address) view returns (bool)"
+      ],
+      "address": "0xfb72239394647e97894585D0D93Ca91f6C3852a4"
     },
     "usdc": {
       "abi": [
@@ -77,14 +85,14 @@
         "function registry() view returns (address)",
         "function setup(bytes data)"
       ],
-      "address": "0x705B7E5fFEc156e92eE2da7153872714d13C8075"
+      "address": "0xe5D56AD66978f233e9d3f53dA633C2404c701394"
     }
   },
   {
     "name": "Fantom",
     "chainId": 4002,
     "gateway": "0x97837985Ec0494E7b9C71f5D3f9250188477ae14",
-    "rpc": "https://xapi.testnet.fantom.network/lachesis",
+    "rpc": "https://rpc.ankr.com/fantom_testnet",
     "constAddressDeployer": "0x98b2920d53612483f91f12ed7754e51b4a77919e",
     "tokenName": "Fantom",
     "tokenSymbol": "FTM",
@@ -118,7 +126,15 @@
         "function gateway() view returns (address)",
         "function sendToMany(string destinationChain, string destinationAddress, address[] destinationAddresses, string symbol, uint256 amount) payable"
       ],
-      "address": "0x12b1347EA0ef1E6646B5d7dFfFf329d8F28A99DC"
+      "address": "0x3DA9d5Dbe5cA67977977f9833f843A0eD0221a89"
+    },
+    "expressService": {
+      "abi": [
+        "function deployExpressProxy(bytes32, address, address, bytes) returns (address)",
+        "function deployedProxyAddress(bytes32, address) view returns (address)",
+        "function isExpressProxy(address) view returns (bool)"
+      ],
+      "address": "0xfb72239394647e97894585D0D93Ca91f6C3852a4"
     },
     "usdc": {
       "abi": [
@@ -158,7 +174,99 @@
         "function registry() view returns (address)",
         "function setup(bytes data)"
       ],
-      "address": "0x12b1347EA0ef1E6646B5d7dFfFf329d8F28A99DC"
+      "address": "0x825f1F4F2c5eF960c37820869d88946b49A1FF6D"
+    }
+  },
+  {
+    "name": "Polygon",
+    "chainId": 80001,
+    "gateway": "0xBF62ef1486468a6bd26Dd669C06db43dEd5B849B",
+    "rpc": "https://polygon-mumbai.g.alchemy.com/v2/Ksd4J1QVWaOJAJJNbr_nzTcJBJU-6uP3",
+    "constAddressDeployer": "0x98b2920d53612483f91f12ed7754e51b4a77919e",
+    "tokenName": "Matic",
+    "tokenSymbol": "MATIC",
+    "gasReceiver": "0xbE406F0189A0B4cf3A05C286473D23791Dd44Cc6",
+    "AxelarGasService": {
+      "salt": "AxelarGasService",
+      "address": "0xbE406F0189A0B4cf3A05C286473D23791Dd44Cc6",
+      "implementation": "0x5f371178A61e01149CB416F0b5d3842d24E7ae6b",
+      "deployer": "0xB8Cd93C83A974649D76B1c19f311f639e62272BC",
+      "collector": "0xB8Cd93C83A974649D76B1c19f311f639e62272BC"
+    },
+    "AxelarDepositService": {
+      "salt": "AxelarDepositService",
+      "address": "0xc1DCb196BA862B337Aa23eDA1Cb9503C0801b955",
+      "implementation": "0xb6241272C569767072e0587098415DF6BA0aaEe9",
+      "deployer": "0xd55cd98cdE61c3CcE1286F9aF50cDbF16f5dba5b",
+      "wrappedSymbol": "WMATIC",
+      "refundIssuer": "0x4f671f34d2d23fec3eE3087E3A0221f8D314D9dF"
+    },
+    "gasOptions": {
+      "gasLimit": 6000000
+    },
+    "gasService": "0xbE406F0189A0B4cf3A05C286473D23791Dd44Cc6",
+    "contract": {
+      "abi": [
+        "constructor(address gateway_, address gasReceiver_)",
+        "error InvalidAddress()",
+        "error NotApprovedByGateway()",
+        "error NotSelf()",
+        "function contractId() pure returns (bytes32)",
+        "function execute(bytes32, string sourceChain, string sourceAddress, bytes payload)",
+        "function executeWithToken(bytes32, string sourceChain, string sourceAddress, bytes payload, string tokenSymbol, uint256 amount)",
+        "function gasService() view returns (address)",
+        "function gateway() view returns (address)",
+        "function sendToMany(string destinationChain, string destinationAddress, address[] destinationAddresses, string symbol, uint256 amount) payable"
+      ],
+      "address": "0x76Ab83ea37DbffF31eEdfBD4E3c99dDBD913c2c2"
+    },
+    "expressService": {
+      "abi": [
+        "function deployExpressProxy(bytes32, address, address, bytes) returns (address)",
+        "function deployedProxyAddress(bytes32, address) view returns (address)",
+        "function isExpressProxy(address) view returns (bool)"
+      ],
+      "address": "0xfb72239394647e97894585D0D93Ca91f6C3852a4"
+    },
+    "usdc": {
+      "abi": [
+        "error InvalidAccount()",
+        "event Approval(address indexed owner, address indexed spender, uint256 value)",
+        "event Transfer(address indexed from, address indexed to, uint256 value)",
+        "function allowance(address owner, address spender) view returns (uint256)",
+        "function approve(address spender, uint256 amount) returns (bool)",
+        "function balanceOf(address account) view returns (uint256)",
+        "function totalSupply() view returns (uint256)",
+        "function transfer(address recipient, uint256 amount) returns (bool)",
+        "function transferFrom(address sender, address recipient, uint256 amount) returns (bool)"
+      ],
+      "address": "0x2c852e740B62308c46DD29B982FBb650D063Bd07"
+    },
+    "proxy": {
+      "abi": [
+        "constructor(address gateway_, address gmpExpressService_)",
+        "error AlreadyInitialized()",
+        "error EtherNotAccepted()",
+        "error InvalidAddress()",
+        "error InvalidImplementation()",
+        "error InvalidTokenSymbol()",
+        "error NotApprovedByGateway()",
+        "error NotExpressRegistry()",
+        "error NotOwner()",
+        "error SetupFailed()",
+        "error TokenTransferFailed()",
+        "function completeExecuteWithToken(address expressCaller, bytes32 commandId, string sourceChain, string sourceAddress, bytes payload, string tokenSymbol, uint256 amount)",
+        "function deployRegistry()",
+        "function execute(bytes32 commandId, string sourceChain, string sourceAddress, bytes payload)",
+        "function executeWithToken(bytes32 commandId, string sourceChain, string sourceAddress, bytes payload, string tokenSymbol, uint256 amount)",
+        "function expressExecuteWithToken(string sourceChain, string sourceAddress, bytes payload, string tokenSymbol, uint256 amount)",
+        "function gateway() view returns (address)",
+        "function implementation() view returns (address implementation_)",
+        "function init(address implementationAddress, address newOwner, bytes params)",
+        "function registry() view returns (address)",
+        "function setup(bytes data)"
+      ],
+      "address": "0x75C48Afa792c7eAB8dA9b380682F48Dc8D397c3B"
     }
   }
 ]
